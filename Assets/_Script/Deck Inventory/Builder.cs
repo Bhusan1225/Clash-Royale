@@ -1,7 +1,8 @@
 
-
 using UnityEngine;
 
+
+[CreateAssetMenu(fileName = "newCard", menuName = "Card/Builder")]
 public class Builder : CARD
 {
 
@@ -14,6 +15,10 @@ public class Builder : CARD
        Spawner,
        Utility
     }
+
+    public float health;
+    public float maxHealth;
+    public float spawningTime;
 
     public override CARD GetCard() { return this; }
     public override Troops GetTroops() { return null; }
