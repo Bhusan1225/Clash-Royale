@@ -5,28 +5,34 @@ using UnityEngine.UI;
 
 public class DeckManager : MonoBehaviour
 {
-    [SerializeField] private GameObject deckHolder;
     public static DeckManager Instance;
-    public List<Card2> cards2 = new List<Card2>(); //list
 
+    [SerializeField] private GameObject deckHolder;
+    public List<Card2> cards2 = new List<Card2>(); // List to store cards
+    private GameObject[] decksCard; // Array for deck slots
+    private int maxDeckSize; // Maximum number of cards allowed
 
-    private GameObject[] decksCard; // Array
     private void Awake()
     {
-
         Instance = this;
     }
 
     private void Start()
     {
+        setMaxDeckSize();
         decksCard = new GameObject[deckHolder.transform.childCount];
-        //set all the slots
+
+        // Set all the slots
         for (int i = 0; i < deckHolder.transform.childCount; i++)
         {
             decksCard[i] = deckHolder.transform.GetChild(i).gameObject;
         }
         RefreshUI();
+    }
 
+    public int setMaxDeckSize()
+    {
+        return maxDeckSize = deckHolder.transform.childCount;
     }
 
     public void RefreshUI()
@@ -40,25 +46,37 @@ public class DeckManager : MonoBehaviour
             }
             catch
             {
-
                 decksCard[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
                 decksCard[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
             }
-
         }
     }
 
-
     public void Add(Card2 card)
     {
-        cards2.Add(card);
-        RefreshUI();
+        if (cards2.Count < maxDeckSize) 
+        {
+            cards2.Add(card);
+            Debug.Log("Card added. Total cards in deck: " + cards2.Count);
+            RefreshUI();
+        }
+        else
+        {
+            Debug.LogError("Cannot add more cards. The deck is full!");
+        }
     }
 
     public void Remove(Card2 card)
     {
-        cards2.Remove(card);
-        RefreshUI();
+        if (cards2.Contains(card))
+        {
+            cards2.Remove(card);
+            Debug.Log("Card removed. Total cards in deck: " + cards2.Count);
+            RefreshUI();
+        }
+        else
+        {
+            Debug.LogWarning("Card not found in deck!");
+        }
     }
-
 }

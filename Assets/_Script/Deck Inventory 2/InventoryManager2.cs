@@ -52,12 +52,14 @@ public class InventoryManager2 : MonoBehaviour
 
     public void Add(Card2 card)
     {
+
         cards2.Add(card);
         //RefreshUI();
     }
 
     public void Remove(Card2 card)
     {
+        
         cards2.Remove(card);
         //RefreshUI();
     }
