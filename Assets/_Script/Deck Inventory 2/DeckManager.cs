@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,29 +9,45 @@ public class DeckManager : MonoBehaviour
     public static DeckManager Instance;
 
     [SerializeField] private GameObject deckHolder;
+    [SerializeField] private GameObject characterHolder;
     public List<Card2> cards2 = new List<Card2>(); // List to store cards
     private GameObject[] decksCard; // Array for deck slots
+    private GameObject[] charactersModel; // Array for characterHolder
     private int maxDeckSize; // Maximum number of cards allowed
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);  // Keep this object persistent across scenes
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
     {
-        setMaxDeckSize();
+        getMaxDeckSize();
+        charactersModel = new GameObject[characterHolder.transform.childCount];
         decksCard = new GameObject[deckHolder.transform.childCount];
 
         // Set all the slots
         for (int i = 0; i < deckHolder.transform.childCount; i++)
         {
-            decksCard[i] = deckHolder.transform.GetChild(i).gameObject;
+            decksCard[i] = deckHolder.transform.GetChild(i).gameObject; //sync with the deckHolder GameObject 
+        }
+
+        for (int i = 0; i< characterHolder.transform.childCount; i++)
+        {
+            charactersModel[i] = characterHolder.transform.GetChild(i).gameObject; //sync with the characterHolder GameObject
         }
         RefreshUI();
     }
 
-    public int setMaxDeckSize()
+    public int getMaxDeckSize()
     {
         return maxDeckSize = deckHolder.transform.childCount;
     }
@@ -41,15 +58,38 @@ public class DeckManager : MonoBehaviour
         {
             try
             {
+                
                 decksCard[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
+                decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
                 decksCard[i].transform.GetChild(0).GetComponent<Image>().sprite = cards2[i].cardIcon;
+                decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = cards2[i].cardName;
+                
+
             }
             catch
             {
+
                 decksCard[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
+                decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = null;
                 decksCard[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
+                decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
             }
         }
+
+        for (int j = 0; j < charactersModel.Length; j++)
+        {
+            //get the model
+            GameObject character= cards2[j].characterModel;
+
+            //get the charactersHolder(characterModel)
+            Transform getTheParent = charactersModel[j].transform.GetChild(1).transform;
+
+            //set model as a child of characterHolder
+            character.transform.SetParent(getTheParent, false);
+
+        }
+
+
     }
 
     public void Add(Card2 card)

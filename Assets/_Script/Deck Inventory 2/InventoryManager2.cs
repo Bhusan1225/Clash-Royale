@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 public class InventoryManager2 : MonoBehaviour
 {
@@ -36,14 +37,21 @@ public class InventoryManager2 : MonoBehaviour
         {
             try
             {
+
                 cards[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
+                cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
                 cards[i].transform.GetChild(0).GetComponent<Image>().sprite = cards2[i].cardIcon;
+                cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = cards2[i].cardName;
+
+
             }
             catch
             {
 
                 cards[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
+                cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = null;
                 cards[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
+                cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
             }
 
         }

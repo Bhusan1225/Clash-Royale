@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Valkyrie
   m_EditorClassIdentifier: 
   id: 4
-  itemName: Valkyrie
+  cardName: Valkyrie
   ElevireValue: 5
   cardIcon: {fileID: 21300000, guid: 352c840421df5184da4bdd225d872f59, type: 3}
+  characterModel: {fileID: 3891087216630005876, guid: 40771469904c65f4f8ff9639452b7fb2,
+    type: 3}

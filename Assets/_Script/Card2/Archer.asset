@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   id: 2
-  itemName: Archer
+  cardName: Archer
   ElevireValue: 2
   cardIcon: {fileID: 21300000, guid: cdfce7940fa97404a872ec7b4114f7e7, type: 3}
+  characterModel: {fileID: 2163271026753998277, guid: d694fb5adede5e54dba3bd693bfd2d73,
+    type: 3}

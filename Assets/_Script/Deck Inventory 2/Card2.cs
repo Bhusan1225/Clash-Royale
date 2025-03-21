@@ -7,8 +7,11 @@ using UnityEngine;
 public class Card2 :ScriptableObject
 {
     public int id;
-    public string itemName;
+    public string cardName;
     public int ElevireValue;
     public Sprite cardIcon;
+    public GameObject characterModel;
+    public float characterSpeed;
+    public float characterRange;
 }
 

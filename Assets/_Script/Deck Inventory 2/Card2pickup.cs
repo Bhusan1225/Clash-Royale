@@ -6,7 +6,7 @@ public class Card2pickup : MonoBehaviour
 {
     public Card2 card2;
     Button cardButton;
-    int MaxDeckSize = 3;
+    
     private void Start()
     {
         cardButton = GetComponent<Button>();
@@ -25,7 +25,7 @@ public class Card2pickup : MonoBehaviour
     public void OnButtonClick()
     {
         //Debug.Log("count" + DeckManager.Instance.setMaxDeckSize());
-        if(DeckManager.Instance.cards2.Count < DeckManager.Instance.setMaxDeckSize())
+        if(DeckManager.Instance.cards2.Count < DeckManager.Instance.getMaxDeckSize())
         {
             Pickup();
             Debug.Log("You picked a card");

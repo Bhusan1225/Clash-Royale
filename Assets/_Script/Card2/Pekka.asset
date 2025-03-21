@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Pekka
   m_EditorClassIdentifier: 
   id: 1
-  itemName: PEKKA
+  cardName: Pekka
   ElevireValue: 4
   cardIcon: {fileID: 21300000, guid: d0750a0952cb14a4eaa56ac034d6f10f, type: 3}
+  characterModel: {fileID: 1247059066750716962, guid: a102c2094de96f349b6af3d2c390ac45,
+    type: 3}
