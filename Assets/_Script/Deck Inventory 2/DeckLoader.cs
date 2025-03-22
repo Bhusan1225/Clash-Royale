@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class DeckLoader : MonoBehaviour
@@ -10,6 +11,7 @@ public class DeckLoader : MonoBehaviour
     [SerializeField] private GameObject deckHolder;
     [SerializeField] private GameObject characterHolder;
     internal GameObject cardCharacter;
+
 
 
     private void Awake()
@@ -27,6 +29,8 @@ public class DeckLoader : MonoBehaviour
 
     private void Start()
     {
+
+
         if (DeckManager.Instance != null)
         {
             LoadDeck();
@@ -61,6 +65,10 @@ public class DeckLoader : MonoBehaviour
             cardCharacter.SetActive(false); //Initially it will be false 
             cardCharacter = selectedDeck[i].characterModel; //set the character
 
+            //set character speed and Attack range
+            NavMeshAgent agent = cardCharacter.GetComponent<NavMeshAgent>();
+            agent.speed = selectedDeck[i].characterSpeed;
+            agent.stoppingDistance = selectedDeck[i].characterRange;
 
         }
     }

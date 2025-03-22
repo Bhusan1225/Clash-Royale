@@ -15,21 +15,24 @@ public class DeckManager : MonoBehaviour
     private GameObject[] charactersModel; // Array for characterHolder
     private int maxDeckSize; // Maximum number of cards allowed
 
+    //private Button thisButton;
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  // Keep this object persistent across scenes
+            DontDestroyOnLoad(gameObject);  
         }
         else
         {
             Destroy(gameObject);
         }
+
     }
 
     private void Start()
     {
+       
         getMaxDeckSize();
         charactersModel = new GameObject[characterHolder.transform.childCount];
         decksCard = new GameObject[deckHolder.transform.childCount];
@@ -58,12 +61,12 @@ public class DeckManager : MonoBehaviour
         {
             try
             {
-                
+
                 decksCard[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
                 decksCard[i].transform.GetChild(0).GetComponent<Image>().sprite = cards2[i].cardIcon;
                 decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = cards2[i].cardName;
-                
+
 
             }
             catch
@@ -76,20 +79,30 @@ public class DeckManager : MonoBehaviour
             }
         }
 
-        for (int j = 0; j < charactersModel.Length; j++)
+        for (int i = 0; i < charactersModel.Length; i++)
         {
-            //get the model
-            GameObject character= cards2[j].characterModel;
+            try
+            {
+                if (i < cards2.Count) // Ensure 'i' is within range of cards2
+                {
+                    GameObject newCharacter = cards2[i].characterModel; // Clone the model
+                    Transform parentTransform = charactersModel[i].transform.GetChild(0); // Get the parent
 
-            //get the charactersHolder(characterModel)
-            Transform getTheParent = charactersModel[j].transform.GetChild(1).transform;
+                    
 
-            //set model as a child of characterHolder
-            character.transform.SetParent(getTheParent, false);
-
+                    // Set the new model as a child
+                    newCharacter.transform.SetParent(parentTransform);
+                }
+                else
+                {
+                    Debug.LogWarning($"Skipping index {i} because it exceeds cards2 list size.");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"Something went wrong at index {i}: {ex.Message}");
+            }
         }
-
-
     }
 
     public void Add(Card2 card)

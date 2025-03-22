@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    
 
-
-    void characterSetActive()
+    public void characterSetActive()
     {
         DeckLoader.Instance.cardCharacter.SetActive(true);
       
