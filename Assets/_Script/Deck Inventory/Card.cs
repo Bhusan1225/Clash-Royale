@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[CreateAssetMenu(fileName ="New Card", menuName = "Card/create New Card")]
+
 
 public abstract class Card :ScriptableObject
 {

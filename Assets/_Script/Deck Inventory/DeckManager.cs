@@ -10,7 +10,7 @@ public class DeckManager : MonoBehaviour
 
     [SerializeField] private GameObject deckHolder;
     [SerializeField] private GameObject characterHolder;
-    public List<Card> cards2 = new List<Card>(); // List to store cards
+    public List<Card> CARDS = new List<Card>(); // List to store cards
     private GameObject[] decksCard; // Array for deck slots
     //private GameObject[] charactersModel; // Array for characterHolder
     private int maxDeckSize; // Maximum number of cards allowed
@@ -64,8 +64,8 @@ public class DeckManager : MonoBehaviour
 
                 decksCard[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
-                decksCard[i].transform.GetChild(0).GetComponent<Image>().sprite = cards2[i].cardIcon;
-                decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = cards2[i].cardName;
+                decksCard[i].transform.GetChild(0).GetComponent<Image>().sprite = CARDS[i].cardIcon;
+                decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = CARDS[i].cardName;
 
 
             }
@@ -107,10 +107,10 @@ public class DeckManager : MonoBehaviour
 
     public void Add(Card card)
     {
-        if (cards2.Count < maxDeckSize) 
+        if (CARDS.Count < maxDeckSize) 
         {
-            cards2.Add(card);
-            Debug.Log("Card added. Total cards in deck: " + cards2.Count);
+            CARDS.Add(card);
+            Debug.Log("Card added. Total cards in deck: " + CARDS.Count);
             RefreshUI();
         }
         else
@@ -121,10 +121,10 @@ public class DeckManager : MonoBehaviour
 
     public void Remove(Card card)
     {
-        if (cards2.Contains(card))
+        if (CARDS.Contains(card))
         {
-            cards2.Remove(card);
-            Debug.Log("Card removed. Total cards in deck: " + cards2.Count);
+            CARDS.Remove(card);
+            Debug.Log("Card removed. Total cards in deck: " + CARDS.Count);
             RefreshUI();
         }
         else

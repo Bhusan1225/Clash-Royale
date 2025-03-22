@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 446071448700072090}
   - component: {fileID: 3591968150578226775}
   - component: {fileID: 8905717137420594053}
+  - component: {fileID: 3852502539537837646}
   m_Layer: 5
   m_Name: Deck Card
   m_TagString: Untagged
@@ -197,6 +198,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3852502539537837646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5092980744779583269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b04a2d5e9add84b88dfe664f3be704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 11400000, guid: c22f40bf47e6eb0499de7421ffdff943, type: 2}
 --- !u!1 &7817848297373907004
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,8 +278,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0a7d2c699d364994694c60fc1eb36dc9, type: 2}
+  m_sharedMaterial: {fileID: -2315109748563710720, guid: 0a7d2c699d364994694c60fc1eb36dc9,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

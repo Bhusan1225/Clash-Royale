@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Card2pickup : MonoBehaviour
 {
-    public Card card2;
+    public Card card;
     Button cardButton;
     
     private void Start()
@@ -14,10 +14,10 @@ public class Card2pickup : MonoBehaviour
     }
     void Pickup()
     {
-        InventoryManager2.Instance.Remove(card2);
+        InventoryManager2.Instance.Remove(card);
         //cardButton.enabled = false;
         this.gameObject.SetActive(false);
-        DeckManager.Instance.Add(card2);
+        DeckManager.Instance.Add(card);
         
     }
 
@@ -25,7 +25,7 @@ public class Card2pickup : MonoBehaviour
     public void OnButtonClick()
     {
         //Debug.Log("count" + DeckManager.Instance.setMaxDeckSize());
-        if(DeckManager.Instance.cards2.Count < DeckManager.Instance.getMaxDeckSize())
+        if(DeckManager.Instance.CARDS.Count < DeckManager.Instance.getMaxDeckSize())
         {
             Pickup();
             Debug.Log("You picked a card");

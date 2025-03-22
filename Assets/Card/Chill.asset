@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ebd7529a3805b49ab5835a0c33bc7c, type: 3}
+  m_Name: Chill
+  m_EditorClassIdentifier: 
+  cardName: 'Chill '
+  ElevireValue: 0
+  cardIcon: {fileID: 0}
+  characterModel: {fileID: 0}
+  characterSpeed: 0
+  characterRange: 0
+  spellType: 0
+  spawnTime: 0

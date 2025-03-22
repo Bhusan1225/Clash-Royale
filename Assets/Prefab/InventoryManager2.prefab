@@ -45,8 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardHolder: {fileID: 0}
-  cards2:
-  - {fileID: 11400000, guid: cc012b0f9e97b974abdb8450c16165c7, type: 2}
-  - {fileID: 11400000, guid: 0beba29696aa43d4cac8f7efe4bbb1f2, type: 2}
-  - {fileID: 11400000, guid: 2c87b7fbb8bd0314a8304c0adb6b3658, type: 2}
-  - {fileID: 11400000, guid: e39c10f494c897641bdd23371a794002, type: 2}
+  CARDS:
+  - {fileID: 11400000, guid: 61feb65bc1c86264ca6ab086b86864a5, type: 2}
+  - {fileID: 11400000, guid: f160caacddd4c124c851dca55ce3b3c1, type: 2}
+  - {fileID: 11400000, guid: 7b72d0e4874faa646a8505f423e0061a, type: 2}
+  - {fileID: 11400000, guid: 7624f099bcf43b344b0f571bc25b5132, type: 2}
+  - {fileID: 11400000, guid: 23e24386561486d4f98676ad43bceab1, type: 2}
+  - {fileID: 11400000, guid: 7b4d8a694b1b8d647b962ed8ec4abe7e, type: 2}
+  - {fileID: 11400000, guid: acbe9d1e6f37bf5438bec3ef823bfbea, type: 2}
+  - {fileID: 11400000, guid: c22f40bf47e6eb0499de7421ffdff943, type: 2}
+  - {fileID: 11400000, guid: c956f4232df2c304ba78792df6ca403c, type: 2}

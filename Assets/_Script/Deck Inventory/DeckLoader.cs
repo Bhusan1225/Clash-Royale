@@ -43,7 +43,7 @@ public class DeckLoader : MonoBehaviour
 
     private void LoadDeck()
     {
-        List<Card> selectedDeck = DeckManager.Instance.cards2; // Get saved deck
+        List<Card> selectedDeck = DeckManager.Instance.CARDS; // Get saved deck
 
         for (int i = 0; i < selectedDeck.Count; i++)
         {
