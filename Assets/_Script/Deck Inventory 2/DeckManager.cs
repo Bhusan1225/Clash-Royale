@@ -10,9 +10,9 @@ public class DeckManager : MonoBehaviour
 
     [SerializeField] private GameObject deckHolder;
     [SerializeField] private GameObject characterHolder;
-    public List<Card2> cards2 = new List<Card2>(); // List to store cards
+    public List<Card> cards2 = new List<Card>(); // List to store cards
     private GameObject[] decksCard; // Array for deck slots
-    private GameObject[] charactersModel; // Array for characterHolder
+    //private GameObject[] charactersModel; // Array for characterHolder
     private int maxDeckSize; // Maximum number of cards allowed
 
     //private Button thisButton;
@@ -34,7 +34,7 @@ public class DeckManager : MonoBehaviour
     {
        
         getMaxDeckSize();
-        charactersModel = new GameObject[characterHolder.transform.childCount];
+        //charactersModel = new GameObject[characterHolder.transform.childCount];
         decksCard = new GameObject[deckHolder.transform.childCount];
 
         // Set all the slots
@@ -43,10 +43,10 @@ public class DeckManager : MonoBehaviour
             decksCard[i] = deckHolder.transform.GetChild(i).gameObject; //sync with the deckHolder GameObject 
         }
 
-        for (int i = 0; i< characterHolder.transform.childCount; i++)
-        {
-            charactersModel[i] = characterHolder.transform.GetChild(i).gameObject; //sync with the characterHolder GameObject
-        }
+        //for (int i = 0; i< characterHolder.transform.childCount; i++)
+        //{
+        //    charactersModel[i] = characterHolder.transform.GetChild(i).gameObject; //sync with the characterHolder GameObject
+        //}
         RefreshUI();
     }
 
@@ -79,33 +79,33 @@ public class DeckManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < charactersModel.Length; i++)
-        {
-            try
-            {
-                if (i < cards2.Count) // Ensure 'i' is within range of cards2
-                {
-                    GameObject newCharacter = cards2[i].characterModel; // Clone the model
-                    Transform parentTransform = charactersModel[i].transform.GetChild(0); // Get the parent
+        //for (int i = 0; i < charactersModel.Length; i++)
+        //{
+        //    try
+        //    {
+        //        if (i < CARDS.Count) // Ensure 'i' is within range of CARDS
+        //        {
+        //            GameObject newCharacter = CARDS[i].characterModel; // Clone the model
+        //            Transform parentTransform = charactersModel[i].transform.GetChild(0); // Get the parent
 
                     
 
-                    // Set the new model as a child
-                    newCharacter.transform.SetParent(parentTransform);
-                }
-                else
-                {
-                    Debug.LogWarning($"Skipping index {i} because it exceeds cards2 list size.");
-                }
-            }
-            catch (System.Exception ex)
-            {
-                Debug.LogError($"Something went wrong at index {i}: {ex.Message}");
-            }
-        }
+        //            // Set the new model as a child
+        //            newCharacter.transform.SetParent(parentTransform);
+        //        }
+        //        else
+        //        {
+        //            Debug.LogWarning($"Skipping index {i} because it exceeds CARDS list size.");
+        //        }
+        //    }
+        //    catch (System.Exception ex)
+        //    {
+        //        Debug.LogError($"Something went wrong at index {i}: {ex.Message}");
+        //    }
+        //}
     }
 
-    public void Add(Card2 card)
+    public void Add(Card card)
     {
         if (cards2.Count < maxDeckSize) 
         {
@@ -119,7 +119,7 @@ public class DeckManager : MonoBehaviour
         }
     }
 
-    public void Remove(Card2 card)
+    public void Remove(Card card)
     {
         if (cards2.Contains(card))
         {

@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "newCard", menuName = "Card/Builder")]
-public class Builder : CARD
+public class Builder : Card
 {
 
     [Header("Builder")]
@@ -20,7 +20,7 @@ public class Builder : CARD
     public float maxHealth;
     public float spawningTime;
 
-    public override CARD GetCard() { return this; }
+    public override Card GetCard() { return this; }
     public override Troops GetTroops() { return null; }
     public override Spell GetSpell() { return null; }
     public override Builder GetBuilder() { return this; }

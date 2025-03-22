@@ -5,7 +5,7 @@ using UnityEngine;
 public class Card2Controller : MonoBehaviour
 {
 
-    public Card2 card2;
+    public Card card2;
 
 
 

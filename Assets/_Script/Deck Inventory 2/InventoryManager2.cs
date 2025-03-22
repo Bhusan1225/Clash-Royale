@@ -9,7 +9,7 @@ public class InventoryManager2 : MonoBehaviour
     public static InventoryManager2 Instance;
 
     [SerializeField] private GameObject cardHolder;
-    public List<Card2> cards2 = new List<Card2>(); //list
+    public List<Card> CARDS = new List<Card>(); //list
 
 
     private GameObject[] cards; // Array
@@ -40,8 +40,8 @@ public class InventoryManager2 : MonoBehaviour
 
                 cards[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
-                cards[i].transform.GetChild(0).GetComponent<Image>().sprite = cards2[i].cardIcon;
-                cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = cards2[i].cardName;
+                cards[i].transform.GetChild(0).GetComponent<Image>().sprite = CARDS[i].cardIcon;
+                cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = CARDS[i].cardName;
 
 
             }
@@ -58,18 +58,18 @@ public class InventoryManager2 : MonoBehaviour
     }
 
 
-    public void Add(Card2 card)
+    public void Add(Card card)
     {
 
-        cards2.Add(card);
-        //RefreshUI();
+        CARDS.Add(card);
+        RefreshUI();
     }
 
-    public void Remove(Card2 card)
+    public void Remove(Card card)
     {
         
-        cards2.Remove(card);
-        //RefreshUI();
+        CARDS.Remove(card);
+        RefreshUI();
     }
 
 

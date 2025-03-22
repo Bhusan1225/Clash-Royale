@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Card2pickup : MonoBehaviour
 {
-    public Card2 card2;
+    public Card card2;
     Button cardButton;
     
     private void Start()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "newCard", menuName = "Card/Spell")]
-public class Spell : CARD
+public class Spell : Card
 {
 
     [Header("Spell")]
@@ -19,7 +19,7 @@ public class Spell : CARD
 
     public float spawnTime;
 
-    public override CARD GetCard() { return this; }
+    public override Card GetCard() { return this; }
     public override Troops GetTroops() { return null; }
     public override Spell GetSpell() { return this; }
     public override Builder GetBuilder() { return null; }

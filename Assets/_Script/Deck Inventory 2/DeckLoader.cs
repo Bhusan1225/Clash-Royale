@@ -43,7 +43,7 @@ public class DeckLoader : MonoBehaviour
 
     private void LoadDeck()
     {
-        List<Card2> selectedDeck = DeckManager.Instance.cards2; // Get saved deck
+        List<Card> selectedDeck = DeckManager.Instance.cards2; // Get saved deck
 
         for (int i = 0; i < selectedDeck.Count; i++)
         {
@@ -60,15 +60,7 @@ public class DeckLoader : MonoBehaviour
             cardText.enabled = true;
             cardText.text = selectedDeck[i].cardName; //set the card text
 
-            //load model
-            cardCharacter = characterHolders.transform.GetChild(1).GetChild(0).gameObject; //get the character model
-            cardCharacter.SetActive(false); //Initially it will be false 
-            cardCharacter = selectedDeck[i].characterModel; //set the character
-
-            //set character speed and Attack range
-            NavMeshAgent agent = cardCharacter.GetComponent<NavMeshAgent>();
-            agent.speed = selectedDeck[i].characterSpeed;
-            agent.stoppingDistance = selectedDeck[i].characterRange;
+            
 
         }
     }
