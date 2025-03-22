@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688a907e2a18800439be9c835b0a8f50, type: 3}
   m_Name: Knight
   m_EditorClassIdentifier: 
-  id: 0
-  cardName: 
-  ElevireValue: 0
+  cardName: Knight
+  ElevireValue: 3
   cardIcon: {fileID: 0}
   characterModel: {fileID: 0}
-  characterSpeed: 0
-  characterRange: 0
+  characterSpeed: 1
+  characterRange: 1
   troopType: 0
-  health: 0
-  maxHealth: 0
-  attackPower: 0
+  health: 20
+  maxHealth: 20
+  attackPower: 5
