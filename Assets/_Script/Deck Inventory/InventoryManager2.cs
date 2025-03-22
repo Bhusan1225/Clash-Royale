@@ -10,9 +10,9 @@ public class InventoryManager2 : MonoBehaviour
 
     [SerializeField] private GameObject cardHolder;
     public List<Card> CARDS = new List<Card>(); //list
-
-
     private GameObject[] cards; // Array
+
+
     private void Awake()
     {
 

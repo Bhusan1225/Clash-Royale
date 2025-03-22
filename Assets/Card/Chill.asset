@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: 'Chill '
   ElevireValue: 0
-  cardIcon: {fileID: 0}
-  characterModel: {fileID: 0}
+  cardIcon: {fileID: 21300000, guid: 2902cbd879f64794c89e89d248a6fbd5, type: 3}
   characterSpeed: 0
   characterRange: 0
   spellType: 0

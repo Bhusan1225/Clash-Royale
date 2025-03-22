@@ -15,13 +15,13 @@ public class Card2pickup : MonoBehaviour
     void Pickup()
     {
         InventoryManager2.Instance.Remove(card);
-        //cardButton.enabled = false;
+        
         this.gameObject.SetActive(false);
         DeckManager.Instance.Add(card);
         
     }
 
-    
+
     public void OnButtonClick()
     {
         //Debug.Log("count" + DeckManager.Instance.setMaxDeckSize());
@@ -35,10 +35,5 @@ public class Card2pickup : MonoBehaviour
             Debug.Log("You can not able to pick a card");
         }
             
-        
-      
-       
-        
     }
-
 }

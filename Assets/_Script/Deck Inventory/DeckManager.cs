@@ -9,10 +9,10 @@ public class DeckManager : MonoBehaviour
     public static DeckManager Instance;
 
     [SerializeField] private GameObject deckHolder;
-    [SerializeField] private GameObject characterHolder;
+    
     public List<Card> CARDS = new List<Card>(); // List to store cards
     private GameObject[] decksCard; // Array for deck slots
-    //private GameObject[] charactersModel; // Array for characterHolder
+   
     private int maxDeckSize; // Maximum number of cards allowed
 
     //private Button thisButton;

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94b35a875e9bac14b8bc518da2dd7185, type: 3}
-  m_Name: Guardian
+  m_Name: Drake
   m_EditorClassIdentifier: 
-  cardName: Guardian
+  cardName: Drake
   ElevireValue: 0
-  cardIcon: {fileID: 21300000, guid: 9c321c82593246d48bb95719f848d450, type: 3}
+  cardIcon: {fileID: 21300000, guid: fe8a2601a82187244a389a36155f2667, type: 3}
   characterSpeed: 0
   characterRange: 0
   builderType: 0

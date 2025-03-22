@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688a907e2a18800439be9c835b0a8f50, type: 3}
   m_Name: Glide
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Glide
   ElevireValue: 0
-  cardIcon: {fileID: 0}
-  characterModel: {fileID: 0}
+  cardIcon: {fileID: 21300000, guid: c6965c3e12b27bd4e9016718f10ba060, type: 3}
   characterSpeed: 0
   characterRange: 0
   troopType: 0

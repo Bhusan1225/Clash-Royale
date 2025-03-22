@@ -11,7 +11,7 @@ public abstract class Card :ScriptableObject
     public int ElevireValue;
 
     public Sprite cardIcon;
-    public GameObject characterModel;
+    //public GameObject characterModel;
     public float characterSpeed;
     public float characterRange;
 
