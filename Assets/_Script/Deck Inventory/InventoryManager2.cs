@@ -1,76 +1,72 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+
 public class InventoryManager2 : MonoBehaviour
 {
     public static InventoryManager2 Instance;
 
     [SerializeField] private GameObject cardHolder;
-    public List<Card> CARDS = new List<Card>(); //list
-    private GameObject[] cards; // Array
-
+    public List<Card> CARDS = new List<Card>(); // Card list
+    private List<GameObject> cards = new List<GameObject>(); // Converted array to list
 
     private void Awake()
     {
-
         Instance = this;
     }
 
     private void Start()
     {
-        cards = new GameObject[cardHolder.transform.childCount];
-        //set all the slots
+       
+
+        // Initialize the card slots list
         for (int i = 0; i < cardHolder.transform.childCount; i++)
         {
-            cards[i] = cardHolder.transform.GetChild(i).gameObject;
+            cards.Add(cardHolder.transform.GetChild(i).gameObject);
         }
+        
         RefreshUI();
-
     }
 
     public void RefreshUI()
     {
-        for (int i = 0; i < cards.Length; i++)
+        for (int i = 0; i < cards.Count; i++)
         {
-            try
+            Image cardImage = cards[i].transform.GetChild(0).GetComponent<Image>();
+            TextMeshProUGUI cardText = cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+
+            if (i < CARDS.Count)
             {
-
-                cards[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-                cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
-                cards[i].transform.GetChild(0).GetComponent<Image>().sprite = CARDS[i].cardIcon;
-                cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = CARDS[i].cardName;
-
-
+                cardImage.enabled = true;
+                cardText.enabled = true;
+                cardImage.sprite = CARDS[i].cardIcon;
+                cardText.text = CARDS[i].cardName;
+                
             }
-            catch
+            else
             {
-
-                cards[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-                cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = null;
-                cards[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
-                cards[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
+                cardImage.enabled = false;
+                cardText.enabled = false;
+                cardImage.sprite = null;
+                cardText.text = "";
             }
-
         }
     }
 
-
     public void Add(Card card)
     {
-
         CARDS.Add(card);
         RefreshUI();
     }
 
     public void Remove(Card card)
     {
-        
-        CARDS.Remove(card);
-        RefreshUI();
+        if (CARDS.Contains(card)) // Ensure the exact reference exists
+        {
+            CARDS.Remove(card);
+            RefreshUI();
+        }
     }
-
-
 }

@@ -9,8 +9,7 @@ public class DeckLoader : MonoBehaviour
     public static DeckLoader Instance;
     
     [SerializeField] private GameObject deckHolder;
-    [SerializeField] private GameObject characterHolder;
-    internal GameObject cardCharacter;
+    
 
 
 
@@ -48,7 +47,6 @@ public class DeckLoader : MonoBehaviour
         for (int i = 0; i < selectedDeck.Count; i++)
         {
             GameObject deckSlot = deckHolder.transform.GetChild(i).gameObject;
-            GameObject characterHolders = characterHolder.transform.GetChild(i).gameObject;
             
             //load image
             Image cardImage = deckSlot.transform.GetChild(0).GetComponent<Image>();
@@ -59,8 +57,6 @@ public class DeckLoader : MonoBehaviour
             TextMeshProUGUI cardText = deckSlot.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             cardText.enabled = true;
             cardText.text = selectedDeck[i].cardName; //set the card text
-
-            
 
         }
     }

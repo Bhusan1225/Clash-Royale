@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ebd7529a3805b49ab5835a0c33bc7c, type: 3}
-  m_Name: Storm
+  m_Script: {fileID: 11500000, guid: 85f87d5cef9e510428498a21cbbd86f6, type: 3}
+  m_Name: d
   m_EditorClassIdentifier: 
-  cardName: ' Storm'
+  cardName: 
   ElevireValue: 0
-  cardIcon: {fileID: 21300000, guid: a979614f01af2d745a1be54244a593e1, type: 3}
+  cardIcon: {fileID: 0}
   characterSpeed: 0
   characterRange: 0
-  spellType: 0
-  spawnTime: 0

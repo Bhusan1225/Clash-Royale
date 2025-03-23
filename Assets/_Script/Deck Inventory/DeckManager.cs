@@ -34,7 +34,6 @@ public class DeckManager : MonoBehaviour
     {
        
         getMaxDeckSize();
-        //charactersModel = new GameObject[characterHolder.transform.childCount];
         decksCard = new GameObject[deckHolder.transform.childCount];
 
         // Set all the slots
@@ -42,12 +41,7 @@ public class DeckManager : MonoBehaviour
         {
             decksCard[i] = deckHolder.transform.GetChild(i).gameObject; //sync with the deckHolder GameObject 
         }
-
-        //for (int i = 0; i< characterHolder.transform.childCount; i++)
-        //{
-        //    charactersModel[i] = characterHolder.transform.GetChild(i).gameObject; //sync with the characterHolder GameObject
-        //}
-        RefreshUI();
+        //RefreshUI();
     }
 
     public int getMaxDeckSize()
@@ -59,77 +53,43 @@ public class DeckManager : MonoBehaviour
     {
         for (int i = 0; i < decksCard.Length; i++)
         {
-            try
+            Image cardImage = decksCard[i].transform.GetChild(0).GetComponent<Image>();
+            TextMeshProUGUI cardText = decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+
+            if (i < CARDS.Count) // Ensure we don't access an index out of range
             {
-
-                decksCard[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-                decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
-                decksCard[i].transform.GetChild(0).GetComponent<Image>().sprite = CARDS[i].cardIcon;
-                decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = CARDS[i].cardName;
-
-
+                cardImage.enabled = true;
+                cardText.enabled = true;
+                cardImage.sprite = CARDS[i].cardIcon;
+                cardText.text = CARDS[i].cardName;
             }
-            catch
+            else
             {
-
-                decksCard[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-                decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = null;
-                decksCard[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
-                decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
+                //cardImage.enabled = false;
+                //cardText.enabled = false;
+                //cardImage.sprite = null;
+                //cardText.text = "";
             }
         }
-
-        //for (int i = 0; i < charactersModel.Length; i++)
-        //{
-        //    try
-        //    {
-        //        if (i < CARDS.Count) // Ensure 'i' is within range of CARDS
-        //        {
-        //            GameObject newCharacter = CARDS[i].characterModel; // Clone the model
-        //            Transform parentTransform = charactersModel[i].transform.GetChild(0); // Get the parent
-
-                    
-
-        //            // Set the new model as a child
-        //            newCharacter.transform.SetParent(parentTransform);
-        //        }
-        //        else
-        //        {
-        //            Debug.LogWarning($"Skipping index {i} because it exceeds CARDS list size.");
-        //        }
-        //    }
-        //    catch (System.Exception ex)
-        //    {
-        //        Debug.LogError($"Something went wrong at index {i}: {ex.Message}");
-        //    }
-        //}
     }
 
     public void Add(Card card)
     {
-        if (CARDS.Count < maxDeckSize) 
+        if (CARDS.Count < maxDeckSize)
         {
             CARDS.Add(card);
             Debug.Log("Card added. Total cards in deck: " + CARDS.Count);
             RefreshUI();
         }
-        else
-        {
-            Debug.LogError("Cannot add more cards. The deck is full!");
-        }
+        
     }
 
     public void Remove(Card card)
     {
-        if (CARDS.Contains(card))
+        if (CARDS.Contains(card)) // Ensure the exact reference exists
         {
             CARDS.Remove(card);
-            Debug.Log("Card removed. Total cards in deck: " + CARDS.Count);
             RefreshUI();
-        }
-        else
-        {
-            Debug.LogWarning("Card not found in deck!");
         }
     }
 }

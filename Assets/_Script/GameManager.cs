@@ -7,9 +7,9 @@ public class GameManager : MonoBehaviour
 {
     
 
-    public void characterSetActive()
-    {
-        DeckLoader.Instance.cardCharacter.SetActive(true);
+    //public void characterSetActive()
+    //{
+    //    DeckLoader.Instance.cardCharacter.SetActive(true);
       
-    }
+    //}
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 
+//[CreateAssetMenu(fileName = "newCard", menuName = "Scriptable Card/CARD")]
 public abstract class Card :ScriptableObject
 {
     
