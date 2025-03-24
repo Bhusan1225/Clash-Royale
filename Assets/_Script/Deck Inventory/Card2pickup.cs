@@ -14,15 +14,12 @@ public class Card2pickup : MonoBehaviour
     }
     void Pickup()
     {
-        InventoryManager2.Instance.Remove(card);
-
-
-        this.gameObject.SetActive(false);
-      
+       
 
         DeckManager.Instance.Add(card);
-        
-       
+        InventoryManager2.Instance.Remove(card);
+        this.gameObject.SetActive(false);
+
 
     }
 
