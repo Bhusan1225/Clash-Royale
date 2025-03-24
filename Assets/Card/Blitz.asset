@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Blitz
   m_EditorClassIdentifier: 
   cardName: Blitz
-  ElevireValue: 0
   cardIcon: {fileID: 21300000, guid: d788d3926588ec04587db3cacd93a27e, type: 3}
+  characterModel: {fileID: 5347953813361334825, guid: 4ff5436fa244e7a45a5d70ab8a27dfed,
+    type: 3}
+  ElevireValue: 0
   characterSpeed: 0
   characterRange: 0
   troopType: 0

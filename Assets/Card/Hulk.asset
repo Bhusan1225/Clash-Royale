@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Hulk
   m_EditorClassIdentifier: 
   cardName: Hulk
-  ElevireValue: 0
   cardIcon: {fileID: 21300000, guid: e5d5e8fee4735534ca91f4907eacacd1, type: 3}
+  characterModel: {fileID: 2538156301857495203, guid: 26b7a5f31f1a5c24da9d71c21979a52d,
+    type: 3}
+  ElevireValue: 0
   characterSpeed: 0
   characterRange: 0
   troopType: 0

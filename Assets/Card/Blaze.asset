@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Blaze
   m_EditorClassIdentifier: 
   cardName: Blaze
-  ElevireValue: 3
   cardIcon: {fileID: 21300000, guid: 41daeaafdab83d144b65d4a8173f001c, type: 3}
+  characterModel: {fileID: 1851645936953415555, guid: f9f09479068bbab469ebb0b56e4c54c9,
+    type: 3}
+  ElevireValue: 3
   characterSpeed: 1
   characterRange: 3
   builderType: 0

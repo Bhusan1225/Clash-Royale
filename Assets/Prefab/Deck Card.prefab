@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 5375043582114745161}
   - component: {fileID: 7134413223455749062}
   - component: {fileID: 2117300741493703208}
+  - component: {fileID: 8090136837161094863}
   m_Layer: 5
   m_Name: Deck Card
   m_TagString: Untagged
@@ -196,7 +197,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7134413223455749062}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8090136837161094863}
+        m_TargetAssemblyTypeName: DeckCardUse, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8090136837161094863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616528155361449732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2213a31770895479b40b6f9c11d4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardImage: {fileID: 1996820753662634190}
+  cardText: {fileID: 7876422373226399651}
 --- !u!1 &8325916995375134221
 GameObject:
   m_ObjectHideFlags: 0

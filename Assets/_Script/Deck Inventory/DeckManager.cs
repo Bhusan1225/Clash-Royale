@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class DeckManager : MonoBehaviour
 {
@@ -12,8 +14,15 @@ public class DeckManager : MonoBehaviour
     
     public List<Card> CARDS = new List<Card>(); // List to store cards
     private GameObject[] decksCard; // Array for deck slots
+
+    public GameObject[] characterModel; 
    
     private int maxDeckSize; // Maximum number of cards allowed
+
+    //Randon spawning 
+    public Vector3 minSpawnPos;
+    public Vector3 maxSpawnpos;
+
 
     //private Button thisButton;
     private void Awake()
@@ -55,6 +64,8 @@ public class DeckManager : MonoBehaviour
         {
             Image cardImage = decksCard[i].transform.GetChild(0).GetComponent<Image>();
             TextMeshProUGUI cardText = decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+            //GameObject cardCharacter = decksCard[i].transform.GetChild(2).GetChild(0).gameObject;// trying the sync with the CardCharacter
+
 
             if (i < CARDS.Count) // Ensure we don't access an index out of range
             {
@@ -91,5 +102,15 @@ public class DeckManager : MonoBehaviour
             CARDS.Remove(card);
             RefreshUI();
         }
+    }
+
+
+    public void SpawnCharacter(GameObject cardCharacter)
+    {
+    
+        Vector3 RandomPos = new Vector3(Random.Range(minSpawnPos.x, maxSpawnpos.x), 0, Random.Range(minSpawnPos.z, maxSpawnpos.z));
+        Instantiate(cardCharacter, RandomPos, cardCharacter.transform.rotation);
+    
+     
     }
 }

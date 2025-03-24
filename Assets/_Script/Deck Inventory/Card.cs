@@ -9,10 +9,11 @@ public abstract class Card :ScriptableObject
 {
     
     public string cardName;
-    public int ElevireValue;
+    
 
     public Sprite cardIcon;
-    //public GameObject characterModel;
+    public GameObject characterModel;
+    public int ElevireValue;
     public float characterSpeed;
     public float characterRange;
 

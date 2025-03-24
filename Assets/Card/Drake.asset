@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Drake
   m_EditorClassIdentifier: 
   cardName: Drake
-  ElevireValue: 0
   cardIcon: {fileID: 21300000, guid: fe8a2601a82187244a389a36155f2667, type: 3}
+  characterModel: {fileID: 4723278329882347398, guid: b4c24552458090849b4fe05271b5a12b,
+    type: 3}
+  ElevireValue: 0
   characterSpeed: 0
   characterRange: 0
   builderType: 0
