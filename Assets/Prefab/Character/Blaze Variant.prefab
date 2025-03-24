@@ -8,20 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5315962048484597959, guid: 51c7355e2ccd614488295a2196d42299,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4da43c812d2542440ae85401e5104f54, type: 2}
     - target: {fileID: 5558226729197263568, guid: 51c7355e2ccd614488295a2196d42299,
         type: 3}
       propertyPath: m_Name
       value: Blaze Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558226729197263568, guid: 51c7355e2ccd614488295a2196d42299,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8003698812125863999, guid: 51c7355e2ccd614488295a2196d42299,
         type: 3}
@@ -72,11 +62,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8683983851227212397, guid: 51c7355e2ccd614488295a2196d42299,
-        type: 3}
-      propertyPath: m_Speed
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GlobalManager : MonoBehaviour
 {
     public static GlobalManager Instance;
-
+    public GameObject playerTarget;
 
 
     private void Awake()
@@ -13,7 +13,7 @@ public class GlobalManager : MonoBehaviour
         Instance = this;
     }
 
-    public GameObject playerTarget;
+    
 
 
 

@@ -108,7 +108,7 @@ public class DeckManager : MonoBehaviour
     public void SpawnCharacter(GameObject cardCharacter)
     {
     
-        Vector3 RandomPos = new Vector3(Random.Range(minSpawnPos.x, maxSpawnpos.x), 0, Random.Range(minSpawnPos.z, maxSpawnpos.z));
+        Vector3 RandomPos = new Vector3(Random.Range(minSpawnPos.x, maxSpawnpos.x), -6, Random.Range(minSpawnPos.z, maxSpawnpos.z));
         Instantiate(cardCharacter, RandomPos, cardCharacter.transform.rotation);
     
      

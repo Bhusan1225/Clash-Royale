@@ -10,14 +10,17 @@ public class Unit : MonoBehaviour
     private Actor3D agent;
     [SerializeField]
     private Actor2D unitSprite;
+
    
-    
-    
+
 
     private void Update()
     {
-        //if (GlobalManager.Instance.playerTarget != null)
-        //    agent.Agent.SetDestination(GlobalManager.Instance.playerTarget.transform.position);
+        if (GlobalManager.Instance.playerTarget != null)
+        {
+            agent.Agent.SetDestination(GlobalManager.Instance.playerTarget.transform.position);
+        }
+           
     }
 
 
