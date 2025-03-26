@@ -12,11 +12,4 @@ public class GlobalManager : MonoBehaviour
     {
         Instance = this;
     }
-
-    
-
-
-
-
-
 }
