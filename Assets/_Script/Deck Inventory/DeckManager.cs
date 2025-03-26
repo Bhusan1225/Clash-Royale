@@ -64,7 +64,7 @@ public class DeckManager : MonoBehaviour
         {
             Image cardImage = decksCard[i].transform.GetChild(0).GetComponent<Image>();
             TextMeshProUGUI cardText = decksCard[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-            //GameObject cardCharacter = decksCard[i].transform.GetChild(2).GetChild(0).gameObject;// trying the sync with the CardCharacter
+           
 
 
             if (i < CARDS.Count) // Ensure we don't access an index out of range
@@ -74,13 +74,7 @@ public class DeckManager : MonoBehaviour
                 cardImage.sprite = CARDS[i].cardIcon;
                 cardText.text = CARDS[i].cardName;
             }
-            else
-            {
-                //cardImage.enabled = false;
-                //cardText.enabled = false;
-                //cardImage.sprite = null;
-                //cardText.text = "";
-            }
+           
         }
     }
 
