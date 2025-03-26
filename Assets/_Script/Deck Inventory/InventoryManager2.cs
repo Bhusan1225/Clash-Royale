@@ -21,7 +21,6 @@ public class InventoryManager2 : MonoBehaviour
 
     private void Start()
     {
-        
 
         // Initialize the card slots list
         for (int i = 0; i < cardHolder.transform.childCount; i++)
@@ -71,7 +70,7 @@ public class InventoryManager2 : MonoBehaviour
         if (CARDS.Contains(card)) // Ensure the exact reference exists
         {
             CARDS.Remove(card);
-            //RefreshUI();
+            
         }
     }
 }

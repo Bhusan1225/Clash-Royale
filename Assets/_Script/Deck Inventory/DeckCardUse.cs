@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CardSpawner: MonoBehaviour
 {
-    GameObject cardCharacter;
-    Button cardButton;
+    
+    private Button cardButton;
     [SerializeField]private Image cardImage;
     [SerializeField] private TextMeshProUGUI cardText;
 
