@@ -46,8 +46,8 @@ public class DeckLoader : MonoBehaviour
 
         for (int i = 0; i < selectedDeck.Count; i++)
         {
-            var deckCardUse = deckHolder.transform.GetChild(i).gameObject.GetComponent<DeckCardUse>();
-            deckCardUse.LoadCard(selectedDeck[i]);
+            var cardSpawner = deckHolder.transform.GetChild(i).gameObject.GetComponent<CardSpawner>();
+            cardSpawner.LoadCard(selectedDeck[i]);
 
         }
     }

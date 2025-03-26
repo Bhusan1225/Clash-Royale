@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-public class DeckCardUse : MonoBehaviour
+public class CardSpawner: MonoBehaviour
 {
     GameObject cardCharacter;
     Button cardButton;
@@ -15,7 +15,7 @@ public class DeckCardUse : MonoBehaviour
     private void Start()
     {
         cardButton = GetComponent<Button>();
-        //cardButton.onClick.AddListener(OnButtonClick);
+        
     }
     void SpawnCharacter()
     {
