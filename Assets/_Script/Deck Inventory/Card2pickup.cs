@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Cardpickup : MonoBehaviour
+public class Card2pickup : MonoBehaviour
 {
     public Card card;
     Button cardButton;
@@ -26,7 +26,7 @@ public class Cardpickup : MonoBehaviour
 
     public void OnButtonClick()
     {
-        
+        //Debug.Log("count" + DeckManager.Instance.setMaxDeckSize());
         if(DeckManager.Instance.CARDS.Count < DeckManager.Instance.getMaxDeckSize())
         {
             Pickup();
